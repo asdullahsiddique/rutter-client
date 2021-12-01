@@ -9,6 +9,13 @@
     "dist/**/*.js",
     "dist/**/*.ts"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asdullahsiddique/rutter-client"
+  },
+  "bugs": {
+    "url": "https://github.com/asdullahsiddique/rutter-client/issues"
+  },
   "scripts": {
     "test": "jest",
     "build": "yarn babel src --out-dir dist --ignore '**/*.test.js' && yarn generate-types",
