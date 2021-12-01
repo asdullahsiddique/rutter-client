@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "yarn babel src --out-dir dist && yarn generate-types",
+    "build": "yarn babel src --out-dir dist --ignore '**/*.test.js' && yarn generate-types",
     "generate-types": "tsc"
   },
   "devDependencies": {
