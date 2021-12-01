@@ -1,7 +1,7 @@
 import nock from 'nock';
 import axios from 'axios';
 import defaults from '../../defaults';
-import { RutterClient } from '../../client';
+import { RutterClient } from '../..';
 
 axios.defaults.adapter = require('axios/lib/adapters/http');
 

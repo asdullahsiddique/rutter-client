@@ -21,7 +21,7 @@
 
 /**
  *
- * @param {import('../client').RutterClient} client
+ * @param {import('..').RutterClient} client
  */
 export default function FulfillmentClient(client) {
   this.client = client;

@@ -3,7 +3,7 @@ import axios from 'axios';
 import ConfigurationError from '../ConfigurationError';
 import RutterError from '../RutterError';
 import defaults from '../defaults';
-import { RutterClient } from '../client';
+import { RutterClient } from '..';
 
 axios.defaults.adapter = require('axios/lib/adapters/http');
 

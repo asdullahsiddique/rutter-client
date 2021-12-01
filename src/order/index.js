@@ -64,7 +64,7 @@ import { stringify as stringifyQuery } from 'query-string';
 
 /**
  *
- * @param {import('../client').RutterClient} client
+ * @param {import('..').RutterClient} client
  */
 export default function OrderClient(client) {
   this.client = client;

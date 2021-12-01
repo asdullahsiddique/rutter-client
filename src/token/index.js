@@ -1,6 +1,6 @@
 /**
  *
- * @param {import('../client').RutterClient} client
+ * @param {import('..').RutterClient} client
  */
 export default function TokenClient(client) {
   this.client = client;

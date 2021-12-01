@@ -35,7 +35,7 @@
 
 /**
  *
- * @param {import('../client').RutterClient} client
+ * @param {import('..').RutterClient} client
  */
 export default function ConnectionClient(client) {
   this.client = client;
