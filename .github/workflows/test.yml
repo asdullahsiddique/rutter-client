@@ -1,8 +1,7 @@
-name: Node.js Package
+name: CI
 
 on: push
     
-
 jobs:
   ci:
     runs-on: ubuntu-latest
