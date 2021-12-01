@@ -2,7 +2,7 @@
   "name": "rutter-client",
   "version": "1.0.0",
   "description": "Unofficial rutter's REST APIs client",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "author": "Asdullah Siddique",
   "license": "MIT",
   "scripts": {
