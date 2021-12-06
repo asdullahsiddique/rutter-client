@@ -35,7 +35,7 @@ describe("Product APIs", () => {
       id: 20,
     }
     const scope = nock(defaults.API_ENDPOINT)
-      .get(`/products/20?access_token=123`)
+      .get(`/products/20?access_token=123&id=20`)
       .reply(200, {});
     await client.product.fetch(options);
     expect(scope.isDone()).toBeTruthy();
