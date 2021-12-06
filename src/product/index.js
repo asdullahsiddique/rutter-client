@@ -1,4 +1,5 @@
 import { stringify as stringifyQuery } from 'query-string';
+import { prop, pick } from 'ramda';
 
 /**
  *
@@ -102,6 +103,40 @@ ProductClient.prototype.fetchAll = async function fetchAll(options) {
   const { data } = await this.client.request({
     method: 'get',
     url: `/products?${stringifyQuery(options, {
+      skipNull: true,
+      skipEmptyString: true,
+    })}`,
+  });
+  return data;
+};
+
+/**
+ *
+ * @typedef {Object} FetchProductResponse
+ * @property {Product} product
+ * @property {Object} connection
+ * @property {string} connection.platform
+ * @property {string} connection.id
+ * @property {string} request_id
+ */
+
+/**
+ * @typedef {Object} FetchProductOptions
+ * @property {string} access_token
+ * @property {string} id
+ */
+
+/**
+ *
+ * @param {FetchProductOptions} options
+ * @returns {FetchProductResponse}
+ * @throws {Error}
+ * @throws {import("../RutterError").RutterError}
+ */
+ProductClient.prototype.fetch = async function fetchAll(options) {
+  const { data } = await this.client.request({
+    method: 'get',
+    url: `/products/${prop('id', options)}?${stringifyQuery((options), {
       skipNull: true,
       skipEmptyString: true,
     })}`,
