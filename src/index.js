@@ -43,7 +43,7 @@ function RutterClient({ configs }) {
   this.connection = new ConnectionClient(this);
   this.order = new OrderClient(this);
   this.fulfillment = new FulfillmentClient(this);
-  this.fulfillment = new ProductClient(this);
+  this.product = new ProductClient(this);
 }
 
 /**
