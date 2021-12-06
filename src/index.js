@@ -11,6 +11,7 @@ import TokenClient from './token';
 import ConnectionClient from './connection';
 import OrderClient from './order';
 import FulfillmentClient from './fulfillment';
+import ProductClient from './product';
 
 /**
  *
@@ -42,6 +43,7 @@ function RutterClient({ configs }) {
   this.connection = new ConnectionClient(this);
   this.order = new OrderClient(this);
   this.fulfillment = new FulfillmentClient(this);
+  this.fulfillment = new ProductClient(this);
 }
 
 /**
