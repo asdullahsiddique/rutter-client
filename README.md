@@ -59,6 +59,12 @@ Fulfillments
 -----------
 - [Fulfill an Order](https://docs.rutterapi.com/reference/fulfill-an-order)
 
+Products
+-----------
+- [Fetch All Products](https://docs.rutterapi.com/reference/fetch-all-products-1)
+- [Fetch a Product](https://docs.rutterapi.com/reference/fetch-a-product)
+
+
 
 ------
 # Other API(s)
