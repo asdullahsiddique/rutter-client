@@ -1,4 +1,4 @@
-import { stringify as stringifyQuery } from 'query-string';
+import { stringify as stringifyQuery } from "query-string";
 
 /**
  *
@@ -107,7 +107,7 @@ export default function OrderClient(client) {
  */
 OrderClient.prototype.fetchAll = async function fetchAll(options) {
   const { data } = await this.client.request({
-    method: 'get',
+    method: "get",
     url: `/orders?${stringifyQuery(options, {
       skipNull: true,
       skipEmptyString: true,
@@ -131,6 +131,7 @@ OrderClient.prototype.fetchAll = async function fetchAll(options) {
  * @typedef {object} FetchByIdOptions
  * @property {string} order_id
  * @property {string} access_token
+ * @property {Array<string>} expand
  */
 
 /**
@@ -142,8 +143,8 @@ OrderClient.prototype.fetchAll = async function fetchAll(options) {
  */
 OrderClient.prototype.fetchById = async function fetchById(options) {
   const { data } = await this.client.request({
-    method: 'get',
-    url: `/orders/${options.order_id}?access_token=${options.access_token}`,
+    method: "get",
+    url: `/orders/${options.order_id}?${stringifyQuery(options)}`,
   });
   return data;
 };
@@ -170,7 +171,7 @@ OrderClient.prototype.fetchById = async function fetchById(options) {
  */
 OrderClient.prototype.create = async function create(options) {
   const { data } = await this.client.request({
-    method: 'post',
+    method: "post",
     url: `/orders?access_token=${options.access_token}`,
     data: {
       order: options.order,
