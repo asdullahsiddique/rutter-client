@@ -47,12 +47,12 @@ describe('Connection APIs', () => {
     expect(scope.isDone()).toBeTruthy();
   });
 
-  it('consumes remove connection API', async () => {
+  it('consumes delete connection API', async () => {
     const connectionId = '123';
     const scope = nock(defaults.API_ENDPOINT)
-      .remove(`/connections/${connectionId}`)
+      .delete(`/connections/${connectionId}`)
       .reply(200, {});
-    await client.connection.remove({ connectionId });
+    await client.connection.deleteConnection({ connectionId });
     expect(scope.isDone()).toBeTruthy();
   });
 });
