@@ -52,7 +52,7 @@ describe('Connection APIs', () => {
     const scope = nock(defaults.API_ENDPOINT)
       .delete(`/connections/${connectionId}`)
       .reply(200, {});
-    await client.connection.delete({ connectionId });
+    await client.connection.deleteConnection({ connectionId });
     expect(scope.isDone()).toBeTruthy();
   });
 });
