@@ -159,8 +159,8 @@ ConnectionClient.prototype.create = async function create(options) {
  * @throws {Error}
  * @throws {import("../RutterError").RutterError}
  */
-ConnectionClient.prototype.delete = async function fetch({ connectionId }) {
-  await this.client.request({
+ConnectionClient.prototype.delete = async function delete({ connectionId }) {
+  return this.client.request({
     method: 'delete',
     url: `/connections/${connectionId}`,
   });
