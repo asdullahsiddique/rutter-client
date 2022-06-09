@@ -151,3 +151,17 @@ ConnectionClient.prototype.create = async function create(options) {
   });
   return data;
 };
+
+/**
+ *
+ * @param {object} options
+ * @param {string} options.connectionId
+ * @throws {Error}
+ * @throws {import("../RutterError").RutterError}
+ */
+ConnectionClient.prototype.delete = async function delete({ connectionId }) {
+  return this.client.request({
+    method: 'delete',
+    url: `/connections/${connectionId}`,
+  });
+};

@@ -46,4 +46,13 @@ describe('Connection APIs', () => {
     await client.connection.create({});
     expect(scope.isDone()).toBeTruthy();
   });
+
+  it('consumes delete connection API', async () => {
+    const connectionId = '123';
+    const scope = nock(defaults.API_ENDPOINT)
+      .delete(`/connections/${connectionId}`)
+      .reply(200, {});
+    await client.connection.delete({ connectionId });
+    expect(scope.isDone()).toBeTruthy();
+  });
 });
